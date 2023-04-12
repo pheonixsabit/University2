@@ -1,0 +1,108 @@
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0
+ ip address 100.100.14.134 255.255.255.252
+ clock rate 2000000
+!
+interface Serial1/0
+ ip address 100.100.14.150 255.255.255.252
+ clock rate 2000000
+!
+interface Serial2/0
+ ip address 100.100.14.164 255.255.255.252
+!
+interface Serial3/0
+ ip address 100.100.14.168 255.255.255.252
+!
+interface Serial4/0
+ ip address 100.100.14.172 255.255.255.252
+!
+interface GigabitEthernet5/0
+ ip address 100.100.10.1 255.255.254.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet6/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet7/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet8/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet9/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+router rip
+ version 2
+ network 100.0.0.0
+ no auto-summary
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
